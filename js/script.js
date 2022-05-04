@@ -10,33 +10,28 @@ console.log("chilometri da percorrere", chilometri);
 const age = parseInt(prompt('Quanti anni hai ?'));
 console.log("age", age);
 
-// calcolare il prezzo del biglietto (0,21€/km)
-const pricePerKm = 0.21;
-console.log("prezzo al km", pricePerKm);
-const priceTicket = chilometri * pricePerKm;
-console.log(priceTicket.toFixed(2) + " €");
 
 // se minorenne applicare 20% di sconto
-let sale20;
-let sale40;
-let price20Off;
-let price40Off;
+const prezzoMinorenne = 0.21 * 80 / 100;
+console.log(prezzoMinorenne);
+
+const prezzo65over = 0.21 * 60 / 100;
+console.log(prezzo65over);
+
+let priceTicket;
+
 if (age < 18) {
-    sale20 = (priceTicket / 100) * 20;
-    console.log("sconto da applicare 20%", sale20);
-    price20Off = priceTicket - sale20;
-    console.log(price20Off.toFixed(2) + " €");
-    document.getElementById('ticket').innerHTML = "Il costo del biglietto è: " + price20Off.toFixed(2) + " €";
+    priceTicket = chilometri * prezzoMinorenne;
+    console.log(priceTicket.toFixed(2));    
 } else if (age >= 65) {
-    // se over 65 applicare il 40% di sconto
-    sale40 = (priceTicket / 100) * 40;
-    console.log("sconto da applicare 40%", sale40);
-    price40Off = priceTicket - sale40;
-    console.log(price40Off.toFixed(2) + " €");
-    document.getElementById('ticket').innerHTML = "Il costo del Biglietto è: " + price40Off.toFixed(2) + " €";
+    priceTicket = chilometri * prezzo65over;
+    console.log(priceTicket.toFixed(2)); 
 } else {
-    document.getElementById('ticket').innerHTML = "Il costo del Biglietto è: " + priceTicket.toFixed(2) + " €";
+    priceTicket = chilometri * 0.21;
+    console.log(priceTicket.toFixed(2));
 }
+
+document.getElementById('ticket').innerHTML = "Il costo del Biglietto è: " + priceTicket.toFixed(2) + " €";
 
 // output stampare il risultato a schermo
 
