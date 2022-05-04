@@ -26,16 +26,17 @@ if (age < 18) {
     console.log("sconto da applicare 20%", sale20);
     price20Off = priceTicket - sale20;
     console.log(price20Off.toFixed(2) + " €");
+    document.getElementById('ticket').innerHTML = "Il costo del biglietto è: " + price20Off.toFixed(2) + " €";
 } else if (age >= 65) {
     // se over 65 applicare il 40% di sconto
     sale40 = (priceTicket / 100) * 40;
     console.log("sconto da applicare 40%", sale40);
     price40Off = priceTicket - sale40;
     console.log(price40Off.toFixed(2) + " €");
+    document.getElementById('ticket').innerHTML = "Il costo del Biglietto è: " + price40Off.toFixed(2) + " €";
+} else {
+    document.getElementById('ticket').innerHTML = "Il costo del Biglietto è: " + priceTicket.toFixed(2) + " €";
 }
-
-
-
 
 // output stampare il risultato a schermo
 
