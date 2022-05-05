@@ -14,19 +14,18 @@ console.log("age", age);
 
 // calcolare prezzo in base all'età
 const standardPrice = 0.21;
-let priceTicket;
+let priceTicket = chilometri * standardPrice;
 
 if (age < 18) {
     const prezzoMinorenne = standardPrice * 80 / 100;
     priceTicket = chilometri * prezzoMinorenne;
-    console.log(priceTicket.toFixed(2));    
+    console.log(priceTicket.toFixed(2));   
+
 } else if (age >= 65) {
     const prezzo65over = standardPrice * 60 / 100;
     priceTicket = chilometri * prezzo65over;
     console.log(priceTicket.toFixed(2)); 
-} else {
-    priceTicket = chilometri * standardPrice;
-    console.log(priceTicket.toFixed(2));
+
 }
 
 // output stampare il risultato a schermo
